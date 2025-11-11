@@ -1,0 +1,247 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hamburguesa Perfecta — Receta detallada</title>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+	<style>
+		:root{
+			--accent:#e9573f;
+			--accent-2:#ffb36b;
+			--bg1: #fff5ee;
+			--card: rgba(255,255,255,0.9);
+		}
+		*{box-sizing:border-box}
+		body{
+			margin:0;
+			font-family: 'Montserrat', Arial, sans-serif;
+			background: radial-gradient(1200px 600px at 10% 10%, rgba(233,87,63,0.08), transparent 8%),
+						radial-gradient(900px 500px at 90% 90%, rgba(255,179,107,0.06), transparent 8%),
+						linear-gradient(180deg,#fff7f2 0%, #fff1e6 50%, #fffaf5 100%);
+			color:#222;
+			-webkit-font-smoothing:antialiased;
+		}
+		.hero{
+			position:relative;
+			overflow:hidden;
+			display:flex;
+			align-items:center;
+			justify-content:center;
+			padding:36px 20px 20px;
+		}
+		.hero-grid{
+			max-width:1000px;
+			width:100%;
+			display:grid;
+			grid-template-columns: 1fr 420px;
+			gap:28px;
+			align-items:center;
+			margin:0 auto;
+		}
+		.hero-card{
+			background: var(--card);
+			border-radius:20px;
+			padding:28px;
+			box-shadow:0 20px 40px rgba(0,0,0,0.08);
+			backdrop-filter: blur(6px);
+		}
+		h1{
+			font-family:'Pacifico', cursive;
+			font-size:48px;
+			color:var(--accent);
+			margin:0 0 8px;
+		}
+		.subtitle{color:#7a4a3a;margin:0 0 18px;font-weight:600}
+		.hero-img-wrap{
+			position:relative;
+			width:420px;
+			height:420px;
+			border-radius:24px;
+			overflow:hidden;
+			box-shadow:0 30px 60px rgba(233,87,63,0.12);
+			transform:translateY(0);
+			transition:transform .6s cubic-bezier(.2,.9,.2,1);
+		}
+		.hero-img-wrap:hover{transform:translateY(-8px) scale(1.02)}
+		.hero-img{
+			width:100%;
+			height:100%;
+			object-fit:cover;
+			display:block;
+		}
+		.badge{
+			position:absolute;
+			left:18px;top:18px;
+			background:linear-gradient(135deg,var(--accent),var(--accent-2));
+			color:white;padding:8px 12px;border-radius:999px;font-weight:700;box-shadow:0 6px 18px rgba(233,87,63,0.18)
+		}
+		.content{
+			max-width:1000px;margin:20px auto;padding:20px;
+			display:grid;grid-template-columns: 1fr 360px;gap:28px;align-items:start;
+		}
+		.card{
+			background:var(--card);padding:20px;border-radius:16px;box-shadow:0 10px 30px rgba(0,0,0,0.06);
+		}
+		h2{margin-top:0;color:#4b2b20}
+		ul{padding-left:18px}
+		.step{margin-bottom:12px;padding:14px;border-radius:12px;background:linear-gradient(180deg,#fff7f3,#fff0e8);box-shadow:inset 0 -2px 0 rgba(0,0,0,0.03)}
+		.meta{font-size:0.95rem;color:#5d3a34;margin-bottom:8px}
+		.tips{font-size:0.95rem;background:#fff6f2;padding:12px;border-radius:10px;border:1px dashed rgba(233,87,63,0.08)}
+		.variantes li{margin-bottom:8px}
+		.time-pill{display:inline-block;background:#fff;padding:6px 10px;border-radius:12px;margin-left:8px;font-weight:700;color:var(--accent)}
+		.footer{grid-column:1/ -1;text-align:center;color:#b75c4a;margin-top:14px}
+		@media (max-width:900px){
+			.hero-grid{grid-template-columns:1fr;}
+			.content{grid-template-columns:1fr}
+			.hero-img-wrap{width:320px;height:320px;margin:0 auto}
+			h1{font-size:36px}
+		}
+	</style>
+</head>
+<body>
+	<section class="hero">
+		<div class="hero-grid">
+			<div class="hero-card">
+				<div class="badge">Receta destacada</div>
+				<h1>🍔 Hamburguesa Perfecta</h1>
+				<p class="subtitle">Receta simple para una hamburguesa jugosa y sabrosa.</p>
+				<p class="meta">Raciones: 4 · Tiempo total: 30 min</p>
+				<div class="card">
+					<h2>Ingredientes</h2>
+					<ul>
+						<li>500 g de carne molida</li>
+						<li>Sal gruesa y pimienta negra recién molida</li>
+						<li>4 panes brioche o de tu preferencia</li>
+						<li>4 lonchas de queso cheddar</li>
+						<li>1 tomate grande en rodajas</li>
+						<li>Hojas de lechuga y cebolla morada en aros</li>
+						<li>Pepinillos, mantequilla para los panes y salsa (mayonesa, salsa de tomate o BBQ)</li>
+					</ul>
+				</div>
+			</div>
+			<div class="hero-img-wrap">
+				<img class="hero-img" src="https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=1200&q=90" alt="Hamburguesa apetecible" />
+			</div>
+		</div>
+	</section>
+
+	<main class="content">
+		<section class="card">
+			<h2>Preparación detallada</h2>
+			<p class="meta">Sigue estos pasos para asegurar jugosidad y buen sellado.</p>
+			<div class="step"><strong>Paso 1:</strong> Divide la carne en 4 porciones y forma discos del tamaño del pan. No los aprietes demasiado.</div>
+			<div class="step"><strong>Paso 2:</strong> Salpimienta por ambos lados justo antes de cocinar.</div>
+			<div class="step"><strong>Paso 3:</strong> Calienta la sartén o parrilla con un poco de aceite hasta que esté bien caliente.</div>
+			<div class="step"><strong>Paso 4:</strong> Cocina las hamburguesas 3–4 minutos por lado para que queden jugosas (ajusta el tiempo si las quieres más hechas).</div>
+			<div class="step"><strong>Paso 5:</strong> Añade el queso en el último minuto para que se derrita. Tuesta los panes con mantequilla y arma la hamburguesa: pan, salsa, carne con queso, tomate, lechuga, cebolla y pan.</div>
+		</section>
+
+		<aside class="card">
+			<h2>Detalles rápidos</h2>
+			<p><strong>Tiempo total:</strong> ~30 min <span class="time-pill">30 min</span></p>
+			<!-- Sección de temperaturas eliminada por petición del usuario -->
+			<h3>Variantes</h3>
+			<ul class="variantes">
+				<li>Hamburguesa BBQ: añade salsa BBQ y cebolla caramelizada.</li>
+				<li>Con bacon: añade tiras crujientes de bacon y mayonesa ahumada.</li>
+				<li>Vegetariana: usa un medallón de portobello o hamburguesa de legumbres.</li>
+			</ul>
+			<h3>Servir con</h3>
+			<ul>
+				<li>Papas rústicas, aros de cebolla o ensalada fresca.</li>
+			</ul>
+			<!-- enlace de fotos eliminado por petición del usuario -->
+		</aside>
+
+		<!-- pie de página eliminado -->
+	</main>
+
+	<!-- Sección de trabajo (formato solicitado por el usuario) -->
+	<section class="work-section card" aria-label="Anexos y contenido del documento">
+		<div class="work-inner">
+			<h2>ANEXO</h2>
+			<div class="work-content preformatted">
+				<p>NOMBRES: Francisco Muela, José Almeida y David Vaca</p>
+				<br>
+				<p>NOMBRE DE LA ASIGNATURA: Arquitectura de
+Computación</p>
+				<br>
+				<p>FECHA DE ELAVORACION DEL DOCUMENTO: 07-10-
+
+2025</p>
+				<br>
+				<p>FECHA DE ENTREGA: 08-10-2025</p>
+				<br>
+				<p>PARTE 1</p>
+				<br>
+				<div class="image-row">
+					<img src="imagenes/1.png" alt="Imagen 1 - Parte 1" class="doc-image" />
+					<img src="imagenes/2.png" alt="Imagen 2 - Parte 1" class="doc-image" />
+				</div>
+				<br>
+				<p>http://127.0.0.1:5000/</p>
+				<br>
+				<p>PARTE 2</p>
+				<p>Soporte para memoria DDR4 hasta 16 GB (8 GB soldados + 8 GB adicionales)Facilita la expansión de memoria RAM.
+Esto mejora la velocidad del sistema, reduce los tiempos de carga y permite ejecutar programas más pesados (como editores de video o entornos de desarrollo).
+Almacenamiento SSD M.2 NVMe PCIe 3.0</p>
+				<p>Ofrece una velocidad de lectura/escritura mucho mayor que los discos duros tradicionales.
+Gracias a esto, Windows y tus aplicaciones se abren en segundos y los archivos grandes se transfieren muy rápido.
+Ranura de expansión M.2 adicional (en algunos modelos)</p>
+				<p>Permite agregar un segundo SSD para más almacenamiento o mayor velocidad. Ideal si más adelante necesitas más espacio para proyectos o juegos.</p>
+				<br>
+				<div class="image-single">
+					<img src="imagenes/2.png" alt="Imagen - Parte 2" class="doc-image" />
+				</div>
+				<br>
+				<p>PARTE 3</p>
+				<p>Evidencia y explicación de la obtención de la imagen con los parámetros de la BIOS o
+				UEFI.</p>
+				<div class="image-single">
+					<img src="imagenes/3.png" alt="Imagen - Parte 3" class="doc-image" />
+				</div>
+				<p>Explicación de los 3 parámetros de la BIOS o UEFI escogidas por el grupo con sus respectivos enlaces de donde se obtuvo la información.</p>
+				<p><strong>System Time:</strong></p>
+				<p>Lo que yo entiendo de Sytmen Time es que la BIOS la utiliza para eventos del sistema, marcas de tiempo y sincronización con el sistema operativo.</p>
+				<p>DELL TECHNOLOGIES (2025) señala que la Sytmen Time en la BIOS sirve para la configuración la fecha y la hora del sistema actuales del hardware de la computadora, que son necesarias para que el sistema operativo y las aplicaciones funcionen correctamente.</p>
+				<br>
+				<p><strong>BIOS Revisión:</strong></p>
+				<p>WIKIPEDIA (6-10-2015) señala que la BIOS Revisión (Basic Input/Output System) es una versión de firmware que el fabricante de la placa base lanza para mejorar el rendimiento, la compatibilidad con nuevo hardware (como procesadores o tarjetas gráficas), corregir fallos de seguridad o solucionar problemas de estabilidad. Actualizar el BIOS a una versión más reciente puede optimizar el funcionamiento de tu equipo, añadir soporte para nuevos componentes o cerrar vulnerabilidades de seguridad.</p>
+				<br>
+				<p><strong>Device Firmware Revision:</strong></p>
+				<p>IBM (13-05-2024) señala que la Device Firmware Revision es un tipo de software que se encuentra directamente en los componentes de hardware, como el BIOS (Sistema Básico de Entrada/Salida) de la placa base, y controla sus funciones básicas y comunicación con el sistema operativo.</p>
+				<p>Buscando en la imagen, el texto de las referencias bibliográficas es el siguiente:</p>
+				<br>
+				<p><strong>BIBLIOGRAFÍAS</strong></p>
+				<p>Dell. (2025, 20 febrero). VxRail: Cómo restablecer la configuración
+predeterminada del BIOS y establecer la fecha y hora del sistema. Dell
+España.<br>
+https://www.dell.com/support/kbdoc/es-es/000211069/vxrail-c%C3%B3mo-restablecer-la-configuraci%C3%B3n-predeterminada-del-bios-y-establecer-la-fecha-y-hora-del-sistema#:~:text=C%C3%B3mo%20configurar%20la%20fecha%20y%20la%20hora%20del%20sistema.&text=el%20paso%205.-,1.,la%20hora%20o%20la%20fecha.</p>
+				<p>ASUS (S.F)<br>
+https://www.asus.com/laptops/for-home/vivobook/vivobook-15-m1502/helpdesk_manual?modelName=M1502YA</p>
+				<p>MANUALS (S.F) Especificaciones del ASUS Vivobook 15 M1502YA</p>
+				<p>Wikipedia. (2025, 6 octubre). BIOS. Wikipedia, la Enciclopedia
+Libre.<br>
+https://es.wikipedia.org/wiki/BIOS#:~:text=secuencia%20de%20arranque.-,Actualizaci%C3%B3n%20Firmware.diferencia%20del%20resto%20del%20firmware.</p>
+				<p>IBM. (13 de junio de 2024). ¿Qué es el firmware?<br>
+https://www.ibm.com/think/topics/firmware#:~:text=El%20firmware%20ayuda%20a%20garantizar,su%20memoria%20no%20vol%C3%A1til%22.</p>
+			</div>
+		</div>
+	</section>
+
+	<style>
+		/* Styles for the appended work section */
+		.work-section{max-width:1000px;margin:28px auto;padding:22px;border-radius:14px;background:linear-gradient(180deg,#fff,#fffaf7);box-shadow:0 18px 40px rgba(0,0,0,0.06)}
+		.work-section h2{margin-top:0;color:#8b4a3d;font-size:1.45rem}
+		.work-content p{margin:10px 0;color:#333;line-height:1.45;white-space:pre-line}
+		.work-content hr{border:none;border-top:1px solid rgba(139,74,61,0.08);margin:14px 0}
+		.work-inner{padding:6px}
+		.image-row{display:flex;gap:12px;flex-wrap:wrap;margin:8px 0}
+		.image-single{margin:8px 0}
+		.doc-image{max-width:100%;height:auto;border-radius:8px;box-shadow:0 8px 20px rgba(0,0,0,0.06)}
+		@media (max-width:900px){.work-section{margin:18px;padding:16px}}
+	</style>
+</body>
+</html>
